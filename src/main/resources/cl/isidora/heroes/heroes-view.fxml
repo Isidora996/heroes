@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="12.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cl.isidora.heroes.controller.HeroesController">
+
+    <padding>
+        <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+    </padding>
+
+    <Label text="Mantenedor de Héroes" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <HBox spacing="10.0">
+        <TextField fx:id="txtId" promptText="ID" prefWidth="80.0"/>
+        <TextField fx:id="txtNombre" promptText="Nombre del héroe" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <HBox spacing="10.0">
+        <Button fx:id="btnCrear" text="Crear" onAction="#handleCrear"/>
+        <Button fx:id="btnActualizar" text="Actualizar" onAction="#handleActualizar"/>
+        <Button fx:id="btnEliminar" text="Eliminar" onAction="#handleEliminar"/>
+        <Button fx:id="btnLimpiar" text="Limpiar" onAction="#handleLimpiar"/>
+    </HBox>
+
+    <TableView fx:id="tableHeroes" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="80.0"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="300.0"/>
+        </columns>
+        <placeholder>
+            <Label text="Todavía no hay héroes"/>
+        </placeholder>
+    </TableView>
+
+</VBox>
